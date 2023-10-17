@@ -6,9 +6,9 @@ public class InputKeyboard : MonoBehaviour
 {
     [SerializeField] InputAction _inputAction;
 
-    Action OnStartEvent, OnCancelEvent;
+    public Action OnStartEvent, OnCancelEvent;
 
-    Action<Vector2> OnPerformEvent;
+    public Action<Vector2> OnPerformEvent;
     public bool IsInput { get; private set; }
     public Vector2 Vector { get; private set; }
 
