@@ -53,6 +53,7 @@ public class EnemyController2 : MonoBehaviour
     private IEnumerator Attack()
     {
         //çUåÇèàóù
+        _animator.SetBool("isMove", true);
         isAttack = true;
         transform.LookAt(Vector3.Lerp(transform.forward + transform.position, _target.transform.position, 0.02f), Vector3.up);
         Ray ray = new Ray(transform.forward, _target.transform.position);
@@ -80,10 +81,12 @@ public class EnemyController2 : MonoBehaviour
         else if(diff < _enemySerchArea * _enemySerchArea)
         {
             _enemyState = EnmeyState.Chase;
+            _animator.SetBool("isMove", true);
         }
         else
         {
             _enemyState= EnmeyState.None;
+            _animator.SetBool("isMove", false);
         }
     }
 
